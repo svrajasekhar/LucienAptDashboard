@@ -1,0 +1,149 @@
+[
+  {
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Maintenance Fee",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Car Parking Charges",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Shifting Charges",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Revenue",
+    "Category": "Interest Income",
+    "Sub-Category": "Bank Interest",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Stall Rent",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Revenue",
+    "Category": "Cash Introduction (Contra)",
+    "Sub-Category": "Cash Received from Bank for Salary",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Professional Fees",
+    "Sub-Category": "Auditor Fees",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Security Salary",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP Repair Work",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Electrical Repairs",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Common Area Maintenance",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Utilities Purchase",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Diesel Purchase",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Utilities",
+    "Sub-Category": "Electricity Charges",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Cash Withdrawal (Contra)",
+    "Sub-Category": "Cash Withdrawn for Salary Distribution",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Housekeeping Materials",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Festival Expenses",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Bank Charges",
+    "": "",
+    "__1": ""
+  },
+  {
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Office Expenses",
+    "": "",
+    "__1": ""
+  }
+]
