@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartment Financial Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f8; }
+.container { padding: 12px; max-width: 900px; margin: auto; }
+h2 { margin-top: 0; }
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.kpi {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+.section {
+  background: #ffffff;
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+ul { padding-left: 18px; margin: 0; }
+li { margin-bottom: 6px; }
+canvas { max-width: 100%; }
+.footer {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h2>Society Financial Dashboard</h2>
+
+<div class="kpis">
+  <div class="kpi"><b>Opening Balance</b><br>₹<span id="opening"></span></div>
+  <div class="kpi"><b>Closing Balance</b><br>₹<span id="closing"></span></div>
+  <div class="kpi"><b>Total Revenue</b><br>₹<span id="revenue"></span></div>
+  <div class="kpi"><b>Total Expense</b><br>₹<span id="expense"></span></div>
+</div>
+
+<div class="section">
+  <h3>Defaulters – Current Quarter</h3>
+  <ul id="defaulters"></ul>
+</div>
+
+<div class="section">
+  <h3>Revenue Breakdown</h3>
+  <canvas id="revenueChart"></canvas>
+</div>
+
+<div class="section">
+  <h3>Expense Breakdown</h3>
+  <canvas id="expenseChart"></canvas>
+</div>
+
+<div class="section">
+  <h3>News & Issues</h3>
+  <ul id="news"></ul>
+</div>
+
+<div class="footer">
+  Data source: GitHub JSON • For internal transparency only
+</div>
+
+</div>
+
+<script>
+const CONFIG = {
+  OPENING_BALANCE: 109379.56,
+  MAINTENANCE_PER_Q: 10500,
+  TX_URL: "data/transactions.json",
+  APT_URL: "data/apartments.json",
+  NEWS_URL: "data/news.json"
+};
+
+Promise.all([
+  fetch(CONFIG.TX_URL).then(r => r.json()),
+  fetch(CONFIG.APT_URL).then(r => r.json()),
+  fetch(CONFIG.NEWS_URL).then(r => r.json())
+]).then(([tx, apartments, news]) => {
+
+  let revenue = 0, expense = 0;
+  let revMap = {}, expMap = {}, aptPaid = {};
+
+  tx.forEach(t => {
+    if (t.type === "Revenue") {
+      revenue += t.amount;
+      revMap[t.category] = (revMap[t.category] || 0) + t.amount;
+      if (t.subCategory === "Maintenance Fee") {
+        aptPaid[t.apartment] = (aptPaid[t.apartment] || 0) + t.amount;
+      }
+    } else if (t.type === "Expense") {
+      expense += t.amount;
+      expMap[t.category] = (expMap[t.category] || 0) + t.amount;
+    }
+  });
+
+  document.getElementById("opening").innerText = CONFIG.OPENING_BALANCE.toFixed(2);
+  document.getElementById("revenue").innerText = revenue.toFixed(2);
+  document.getElementById("expense").innerText = expense.toFixed(2);
+  document.getElementById("closing").innerText =
+    (CONFIG.OPENING_BALANCE + revenue - expense).toFixed(2);
+
+  const defUl = document.getElementById("defaulters");
+  apartments.forEach(a => {
+    let paid = aptPaid[a.apartment] || 0;
+    if (paid < CONFIG.MAINTENANCE_PER_Q) {
+      let li = document.createElement("li");
+      li.innerText = `Apartment ${a.apartment}: Due ₹${(CONFIG.MAINTENANCE_PER_Q - paid).toFixed(2)}`;
+      defUl.appendChild(li);
+    }
+  });
+  if (!defUl.hasChildNodes()) {
+    defUl.innerHTML = "<li>No defaulters for this quarter</li>";
+  }
+
+  new Chart(document.getElementById("revenueChart"), {
+    type: "pie",
+    data: { labels: Object.keys(revMap), datasets: [{ data: Object.values(revMap) }] },
+    options: { responsive: true }
+  });
+
+  new Chart(document.getElementById("expenseChart"), {
+    type: "pie",
+    data: { labels: Object.keys(expMap), datasets: [{ data: Object.values(expMap) }] },
+    options: { responsive: true }
+  });
+
+  const newsUl = document.getElementById("news");
+  news.forEach(n => {
+    let li = document.createElement("li");
+    li.innerText = `${n.date} – ${n.title}`;
+    newsUl.appendChild(li);
+  });
+});
+</script>
+
+</body>
+</html>
