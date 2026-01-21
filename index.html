@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apartment Financial Dashboard</title>
+<title>Lucien Apartment Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
-.container{padding:12px;max-width:900px;margin:auto}
-.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.kpi,.section{background:#fff;padding:12px;border-radius:8px}
-.section{margin-top:14px}
+.container{padding:12px;max-width:1000px;margin:auto}
+h2{text-align:center}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.kpi{background:#fff;padding:12px;border-radius:8px}
 .kpi small{display:block;font-size:12px;color:#666;margin-top:4px}
+.section{background:#fff;margin-top:16px;padding:12px;border-radius:8px}
 .badge{display:inline-block;padding:2px 8px;border-radius:12px;background:#c0392b;color:#fff;font-size:12px;margin-left:6px}
 .news-item{margin-bottom:10px}
 .news-title{font-weight:bold}
@@ -22,47 +23,42 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 <div class="container">
 
 <div style="text-align:center;margin-bottom:10px;">
-  <img src="assets/lucien_logo.png" alt="Lucien Apartments Logo" style="max-height:80px;width:auto;">
+  <img src="assets/lucien_logo.png" alt="Lucien Apartments Logo" style="max-height:80px;">
 </div>
 
-
-<!-- Owner/MC toggle removed -->
-<div style="display:none;">
-  <label><input type="radio" name="role" value="owner" checked> Owner</label>
-  <label style="margin-left:10px;"><input type="radio" name="role" value="mc"> MC</label>
-</div>
 <h2>Lucien Apartment Dashboard</h2>
 
-
 <div class="kpis">
-
   <div class="kpi">
     <b>Opening Balance</b><br>
-    ₹<span id="opening"></span>
-    <small>From: <span id="fromDate"></span></small>
-  </div>
-  <div class="kpi">
-    <b>Closing Balance</b><br>
-    ₹<span id="closing"></span>
-    <small>As on: <span id="toDate"></span></small>
-  </div>
-  <div class="kpi"><b>Total Revenue</b><br>₹<span id="revenue"></span></div>
-  <div class="kpi"><b>Total Expense</b><br>₹<span id="expense"></span></div>
-  <div class="kpi">
-    <b>Corpus Fund Balance</b><br>
-    ₹<span id="corpusAmount">-</span>
-    <small>As on: <span id="corpusDate">-</span></small>
-  </div>
-  <div class="kpi">
-    <b>Pending Collections</b><br>
-    ₹<span id="pendingCollections">-</span>
+    ₹<span id="opening">0</span>
+    <small>From: <span id="fromDate">-</span></small>
   </div>
 
+  <div class="kpi">
+    <b>Closing Balance</b><br>
+    ₹<span id="closing">0</span>
+    <small>As on: <span id="toDate">-</span></small>
+  </div>
+
+  <div class="kpi"><b>Total Revenue</b><br>₹<span id="revenue">0</span></div>
+  <div class="kpi"><b>Total Expense</b><br>₹<span id="expense">0</span></div>
+
+  <div class="kpi">
+    <b>Corpus Fund Balance</b><br>
+    ₹<span id="corpusAmount">38,00,000</span>
+    <small>As on: <span id="corpusDate">31-Dec-2025</span></small>
+  </div>
+
+  <div class="kpi">
+    <b>Pending Collections</b><br>
+    ₹<span id="pendingCollections">0</span>
+  </div>
 </div>
 
 <div class="section">
   <h3>Defaulters – Current Quarter <span class="badge" id="defaulterCount">0</span></h3>
-  <div id="defaulters"></div>
+  <div id="defaulters">-</div>
 </div>
 
 <div class="section">
@@ -70,15 +66,22 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
   <canvas id="qChart"></canvas>
 </div>
 
-<div class="section"><h3>Revenue Breakdown</h3><canvas id="revChart"></canvas></div>
-<div class="section"><h3>Expense Breakdown</h3><canvas id="expChart"></canvas></div>
+<div class="section">
+  <h3>Revenue Breakdown</h3>
+  <canvas id="revChart"></canvas>
+</div>
+
+<div class="section">
+  <h3>Expense Breakdown</h3>
+  <canvas id="expChart"></canvas>
+</div>
 
 <div class="section">
   <h3>News & Issues</h3>
   <div id="news"></div>
 </div>
 
-<div id="footer" style="margin-top:16px;font-size:12px;color:#666;text-align:center;">
+<div style="margin-top:16px;font-size:12px;color:#666;text-align:center;">
   Data as on <span id="dataAsOn">-</span>
 </div>
 
@@ -104,165 +107,109 @@ function parseDate(d){
 }
 
 function formatDate(d){
-  return d.toLocaleDateString("en-GB", {
-    day: "2-digit",
-    month: "short",
-    year: "numeric"
-  }).replace(/ /g,"-");
+  return d.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}).replace(/ /g,"-");
 }
 
-function getQuarter(monthIndex){
-  return Math.floor(monthIndex / 3) + 1;
-}
+function getQuarter(m){ return Math.floor(m/3)+1; }
 
 Promise.all([
   fetch("data/transactions.json").then(r=>r.json()),
   fetch("data/apartments.json").then(r=>r.json()),
   fetch("data/news.json").then(r=>r.json())
-]).then(([tx, apts, news]) => {
+]).then(([tx,apts,news])=>{
 
-  let revenue = 0, expense = 0;
-  let revMap = {}, expMap = {};
-  let paid = {};
-  let defaulters = [];
-  let dates = [];
-  let quarterlyExpense = {};
+let revenue=0, expense=0;
+let revMap={}, expMap={}, paid={}, dates=[], defaulters=[];
+let qExpense={};
 
-  tx.forEach(t => {
-    const dt = parseDate(t.Date);
-    if (dt) dates.push(dt);
+tx.forEach(t=>{
+  const dt=parseDate(t.Date);
+  if(dt) dates.push(dt);
 
-    const raw = t["Amount (₹)"];
-    if (!raw) return;
+  const raw=t["Amount (₹)"];
+  if(!raw) return;
+  const amt=Number(String(raw).replace("₹","").replace(/,/g,""));
+  if(isNaN(amt)) return;
 
-    const amt = Number(String(raw).replace("₹","").replace(/,/g,""));
-    if (isNaN(amt) || amt <= 0) return;
+  const type=String(t.Type||"").toLowerCase();
+  const sub=String(t["Sub-Category"]||"").toLowerCase();
 
-    const type = String(t.Type || "").toLowerCase().trim();
-    const subCat = String(t["Sub-Category"] || "").toLowerCase().trim();
+  if(type==="revenue"){
+    revenue+=amt;
+    revMap[t.Category]=(revMap[t.Category]||0)+amt;
 
-    if (type === "revenue") {
-      revenue += amt;
-      revMap[t.Category] = (revMap[t.Category] || 0) + amt;
-
-      if (subCat === "maintenance fee") {
-        const aptVal = t.apartment ?? t["Apt No"];
-        if (aptVal !== undefined && aptVal !== "") {
-          const aptKey = String(aptVal).trim();
-          paid[aptKey] = (paid[aptKey] || 0) + amt;
-        }
+    if(sub==="maintenance fee"){
+      const apt=t.apartment ?? t["Apt No"];
+      if(apt!==undefined){
+        const k=String(apt).trim();
+        paid[k]=(paid[k]||0)+amt;
       }
     }
-
-    if (type === "expense" && dt) {
-      expense += amt;
-      expMap[t.Category] = (expMap[t.Category] || 0) + amt;
-
-      const q = getQuarter(dt.getMonth());
-      const qLabel = QUARTER_LABELS[q];
-      quarterlyExpense[qLabel] = (quarterlyExpense[qLabel] || 0) + amt;
-    }
-  });
-
-  if (dates.length) {
-    document.getElementById("fromDate").innerText =
-      formatDate(new Date(Math.min(...dates)));
-    document.getElementById("toDate").innerText =
-      formatDate(new Date(Math.max(...dates)));
   }
 
-  document.getElementById("opening").innerText = Math.round(OPENING_BALANCE).toLocaleString("en-IN");
-  document.getElementById("revenue").innerText = Math.round(revenue).toLocaleString("en-IN");
-  document.getElementById("expense").innerText = Math.round(expense).toLocaleString("en-IN");
-  document.getElementById("closing").innerText =
-    Math.round(OPENING_BALANCE + revenue - expense).toLocaleString("en-IN");
-
-  apts.forEach(obj => {
-    const aptNo = String(obj.apartment).trim();
-    if ((paid[aptNo] || 0) < MAINT_Q) defaulters.push(aptNo);
-  });
-
-  document.getElementById("defaulters").innerText =
-    defaulters.length ? defaulters.join(", ") : "No defaulters";
-  document.getElementById("defaulterCount").innerText = defaulters.length;
-
-  const qLabels = Object.keys(quarterlyExpense);
-  const qExpense = qLabels.map(q => Math.round(quarterlyExpense[q]));
-  const qProjection = qLabels.map(() => QUARTERLY_PROJECTION);
-
-  new Chart(document.getElementById("qChart"), {
-    type: "bar",
-    data: {
-      labels: qLabels,
-      datasets: [
-        { label: "Actual Expense", data: qExpense },
-        { label: "Projected Expense", data: qProjection }
-      ]
+  if(type==="expense"){
+    expense+=amt;
+    expMap[t.Category]=(expMap[t.Category]||0)+amt;
+    if(dt){
+      const qLabel=QUARTER_LABELS[getQuarter(dt.getMonth())];
+      qExpense[qLabel]=(qExpense[qLabel]||0)+amt;
     }
-  });
-
-  new Chart(document.getElementById("revChart"), {
-    type: "pie",
-    data: { labels: Object.keys(revMap), datasets: [{ data: Object.values(revMap) }] }
-  });
-
-  new Chart(document.getElementById("expChart"), {
-    type: "pie",
-    data: { labels: Object.keys(expMap), datasets: [{ data: Object.values(expMap) }] }
-  });
-
-  const n = document.getElementById("news");
-  news.forEach(x => {
-    const div = document.createElement("div");
-    div.className = "news-item";
-    div.innerHTML = `
-      <div class="news-title">${x.Title}</div>
-      <div class="news-meta">Date: ${x.Date} | Status: ${x.Status || "N/A"}</div>
-      <div>${x.Description || ""}</div>
-    `;
-    n.appendChild(div);
-  });
-
-// Role-based toggle (Owner vs MC)
-// role toggle removed.forEach(r => {
-  r.addEventListener('change', e => {
-    const role = e.target.value;
-    document.querySelectorAll('.mc-only').forEach(el => {
-      el.style.display = (role === 'mc') ? 'block' : 'none';
-    });
-  });
+  }
 });
 
-// Footer date = latest transaction date
-if (dates.length) {
-  document.getElementById("dataAsOn").innerText =
-    formatDate(new Date(Math.max(...dates)));
+document.getElementById("opening").innerText=Math.round(OPENING_BALANCE).toLocaleString("en-IN");
+document.getElementById("revenue").innerText=Math.round(revenue).toLocaleString("en-IN");
+document.getElementById("expense").innerText=Math.round(expense).toLocaleString("en-IN");
+document.getElementById("closing").innerText=Math.round(OPENING_BALANCE+revenue-expense).toLocaleString("en-IN");
+
+if(dates.length){
+  const minD=new Date(Math.min(...dates));
+  const maxD=new Date(Math.max(...dates));
+  document.getElementById("fromDate").innerText=formatDate(minD);
+  document.getElementById("toDate").innerText=formatDate(maxD);
+  document.getElementById("dataAsOn").innerText=formatDate(maxD);
 }
 
+apts.forEach(a=>{
+  const k=String(a.apartment);
+  if((paid[k]||0)<MAINT_Q) defaulters.push(k);
+});
 
-// ---- Corpus Fund (manual input placeholder) ----
-// Update these when data is available
-const CORPUS_FUND_AMOUNT = 3800000; // e.g. 1250000
-const CORPUS_FUND_DATE = "31-Dec-2025";   // e.g. "31-Mar-2026"
+document.getElementById("defaulters").innerText=defaulters.length?defaulters.join(", "):"No defaulters";
+document.getElementById("defaulterCount").innerText=defaulters.length;
 
-if (CORPUS_FUND_AMOUNT !== null) {
-  document.getElementById("corpusAmount").innerText =
-    Math.round(CORPUS_FUND_AMOUNT).toLocaleString("en-IN");
-}
-if (CORPUS_FUND_DATE) {
-  document.getElementById("corpusDate").innerText = CORPUS_FUND_DATE;
-}
+const expected=apts.length*MAINT_Q;
+let collected=0; Object.values(paid).forEach(v=>collected+=v);
+document.getElementById("pendingCollections").innerText=Math.max(expected-collected,0).toLocaleString("en-IN");
 
-// ---- Pending Collections ----
-const TOTAL_APARTMENTS = apts.length;
-const EXPECTED_Q_COLLECTION = TOTAL_APARTMENTS * MAINT_Q;
-let collected = 0;
+new Chart(document.getElementById("qChart"),{
+  type:"bar",
+  data:{labels:Object.keys(qExpense),
+    datasets:[
+      {label:"Actual Expense",data:Object.values(qExpense).map(v=>Math.round(v))},
+      {label:"Projected Expense",data:Object.keys(qExpense).map(()=>QUARTERLY_PROJECTION)}
+    ]}
+});
 
-Object.values(paid).forEach(v => collected += v);
+new Chart(document.getElementById("revChart"),{
+  type:"pie",
+  data:{labels:Object.keys(revMap),datasets:[{data:Object.values(revMap)}]}
+});
 
-const pending = EXPECTED_Q_COLLECTION - collected;
-document.getElementById("pendingCollections").innerText =
-  pending > 0 ? Math.round(pending).toLocaleString("en-IN") : "0";
+new Chart(document.getElementById("expChart"),{
+  type:"pie",
+  data:{labels:Object.keys(expMap),datasets:[{data:Object.values(expMap)}]}
+});
+
+const n=document.getElementById("news");
+news.forEach(x=>{
+  const d=document.createElement("div");
+  d.className="news-item";
+  d.innerHTML=`<div class="news-title">${x.Title}</div>
+  <div class="news-meta">Date: ${x.Date} | Status: ${x.Status||"N/A"}</div>
+  <div>${x.Description||""}</div>`;
+  n.appendChild(d);
+});
 
 });
 </script>
