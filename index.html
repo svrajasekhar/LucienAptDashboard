@@ -29,11 +29,6 @@ h2{text-align:center}
 
 
 /* Dark mode */
-body.dark { background:#121212; color:#e0e0e0; }
-body.dark .kpi { color:#ffffff; }
-body.dark .section { background:#1e1e1e; }
-body.dark .news-item { border-bottom:1px solid #333; }
-
 /* Section background differentiation */
 .section.defaulters { background:#fce4ec; }
 .section.quarterly { background:#e3f2fd; }
@@ -41,11 +36,6 @@ body.dark .news-item { border-bottom:1px solid #333; }
 .section.expense { background:#e8f5e9; }
 .section.news { background:#fffde7; }
 
-body.dark .section.defaulters { background:#2a1a1f; }
-body.dark .section.quarterly { background:#1a2533; }
-body.dark .section.revenue { background:#2a1f33; }
-body.dark .section.expense { background:#1f2a24; }
-body.dark .section.news { background:#2a2a1f; }
 
 /* Smaller date text in KPIs */
 .kpi small { font-size:9px; }
@@ -68,11 +58,6 @@ body.dark .section.news { background:#2a2a1f; }
 </div>
 
 
-<div style="text-align:right;margin-bottom:6px;">
-  <label>
-    <input type="checkbox" id="darkToggle"> Dark Mode
-  </label>
-</div>
 
 <h2>Lucien Apartment Dashboard</h2>
 
@@ -260,13 +245,6 @@ news.forEach(x=>{
 });
 
 
-// Dark mode toggle
-const darkToggle = document.getElementById("darkToggle");
-if (darkToggle) {
-  darkToggle.addEventListener("change", () => {
-    document.body.classList.toggle("dark", darkToggle.checked);
-  });
-}
 
 });
 </script>
