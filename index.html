@@ -34,6 +34,7 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 
 
 <div class="kpis">
+
   <div class="kpi">
     <b>Opening Balance</b><br>
     ₹<span id="opening"></span>
@@ -46,6 +47,16 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
   </div>
   <div class="kpi"><b>Total Revenue</b><br>₹<span id="revenue"></span></div>
   <div class="kpi"><b>Total Expense</b><br>₹<span id="expense"></span></div>
+  <div class="kpi">
+    <b>Corpus Fund Balance</b><br>
+    ₹<span id="corpusAmount">-</span>
+    <small>As on: <span id="corpusDate">-</span></small>
+  </div>
+  <div class="kpi">
+    <b>Pending Collections</b><br>
+    ₹<span id="pendingCollections">-</span>
+  </div>
+
 </div>
 
 <div class="section mc-only">
@@ -226,6 +237,31 @@ if (dates.length) {
   document.getElementById("dataAsOn").innerText =
     formatDate(new Date(Math.max(...dates)));
 }
+
+
+// ---- Corpus Fund (manual input placeholder) ----
+// Update these when data is available
+const CORPUS_FUND_AMOUNT = 3800000; // e.g. 1250000
+const CORPUS_FUND_DATE = 31-Dec-2025;   // e.g. "31-Mar-2026"
+
+if (CORPUS_FUND_AMOUNT !== null) {
+  document.getElementById("corpusAmount").innerText =
+    Math.round(CORPUS_FUND_AMOUNT).toLocaleString("en-IN");
+}
+if (CORPUS_FUND_DATE) {
+  document.getElementById("corpusDate").innerText = CORPUS_FUND_DATE;
+}
+
+// ---- Pending Collections ----
+const TOTAL_APARTMENTS = apts.length;
+const EXPECTED_Q_COLLECTION = TOTAL_APARTMENTS * MAINT_Q;
+let collected = 0;
+
+Object.values(paid).forEach(v => collected += v);
+
+const pending = EXPECTED_Q_COLLECTION - collected;
+document.getElementById("pendingCollections").innerText =
+  pending > 0 ? Math.round(pending).toLocaleString("en-IN") : "0";
 
 });
 </script>
