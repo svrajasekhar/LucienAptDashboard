@@ -59,8 +59,15 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 <script>
 const OPENING_BALANCE = 109379.56;
 const MAINT_Q = 10500;
-const MONTHLY_PROJECTION = 262000; // ₹2.62 lakh per month
+const MONTHLY_PROJECTION = 262000;
 const QUARTERLY_PROJECTION = MONTHLY_PROJECTION * 3;
+
+const QUARTER_LABELS = {
+  1: "Jan to March",
+  2: "Apr to June",
+  3: "Jul to Sept",
+  4: "Oct to Dec"
+};
 
 function parseDate(d){
   if(!d) return null;
@@ -68,9 +75,8 @@ function parseDate(d){
   return isNaN(parsed) ? null : parsed;
 }
 
-function getQuarter(d){
-  const m = d.getMonth(); // 0-11
-  return Math.floor(m / 3) + 1;
+function getQuarter(monthIndex){
+  return Math.floor(monthIndex / 3) + 1;
 }
 
 Promise.all([
@@ -88,9 +94,7 @@ Promise.all([
 
   tx.forEach(t => {
     const dt = parseDate(t.Date);
-    if (dt) {
-      dates.push(dt);
-    }
+    if (dt) dates.push(dt);
 
     const raw = t["Amount (₹)"];
     if (!raw) return;
@@ -114,21 +118,21 @@ Promise.all([
       }
     }
 
-    if (type === "expense") {
+    if (type === "expense" && dt) {
       expense += amt;
       expMap[t.Category] = (expMap[t.Category] || 0) + amt;
-      if (dt) {
-        const qKey = dt.getFullYear() + "-Q" + getQuarter(dt);
-        quarterlyExpense[qKey] = (quarterlyExpense[qKey] || 0) + amt;
-      }
+
+      const q = getQuarter(dt.getMonth());
+      const qLabel = QUARTER_LABELS[q];
+      quarterlyExpense[qLabel] = (quarterlyExpense[qLabel] || 0) + amt;
     }
   });
 
   if (dates.length) {
-    const minDate = new Date(Math.min(...dates));
-    const maxDate = new Date(Math.max(...dates));
-    document.getElementById("fromDate").innerText = minDate.toLocaleDateString("en-IN");
-    document.getElementById("toDate").innerText = maxDate.toLocaleDateString("en-IN");
+    document.getElementById("fromDate").innerText =
+      new Date(Math.min(...dates)).toLocaleDateString("en-IN");
+    document.getElementById("toDate").innerText =
+      new Date(Math.max(...dates)).toLocaleDateString("en-IN");
   }
 
   document.getElementById("opening").innerText = Math.round(OPENING_BALANCE).toLocaleString("en-IN");
@@ -146,8 +150,7 @@ Promise.all([
     defaulters.length ? defaulters.join(", ") : "No defaulters";
   document.getElementById("defaulterCount").innerText = defaulters.length;
 
-  // Quarterly Chart
-  const qLabels = Object.keys(quarterlyExpense).sort();
+  const qLabels = Object.keys(quarterlyExpense);
   const qExpense = qLabels.map(q => Math.round(quarterlyExpense[q]));
   const qProjection = qLabels.map(() => QUARTERLY_PROJECTION);
 
