@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lucien Apartment Dashboard</title>
+<title>Apartment Financial Dashboard</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
@@ -75,6 +75,14 @@ function parseDate(d){
   return isNaN(parsed) ? null : parsed;
 }
 
+function formatDate(d){
+  return d.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric"
+  }).replace(/ /g,"-");
+}
+
 function getQuarter(monthIndex){
   return Math.floor(monthIndex / 3) + 1;
 }
@@ -130,9 +138,9 @@ Promise.all([
 
   if (dates.length) {
     document.getElementById("fromDate").innerText =
-      new Date(Math.min(...dates)).toLocaleDateString("en-IN");
+      formatDate(new Date(Math.min(...dates)));
     document.getElementById("toDate").innerText =
-      new Date(Math.max(...dates)).toLocaleDateString("en-IN");
+      formatDate(new Date(Math.max(...dates)));
   }
 
   document.getElementById("opening").innerText = Math.round(OPENING_BALANCE).toLocaleString("en-IN");
