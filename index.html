@@ -12,6 +12,7 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 .kpi,.section{background:#fff;padding:12px;border-radius:8px}
 .section{margin-top:14px}
 .kpi small{display:block;font-size:12px;color:#666;margin-top:4px}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;background:#c0392b;color:#fff;font-size:12px;margin-left:6px}
 .news-item{margin-bottom:10px}
 .news-title{font-weight:bold}
 .news-meta{font-size:12px;color:#555}
@@ -37,8 +38,13 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 </div>
 
 <div class="section">
-  <h3>Defaulters – Current Quarter</h3>
+  <h3>Defaulters – Current Quarter <span class="badge" id="defaulterCount">0</span></h3>
   <div id="defaulters"></div>
+</div>
+
+<div class="section">
+  <h3>Month-on-Month: Expense vs Projection</h3>
+  <canvas id="momChart"></canvas>
 </div>
 
 <div class="section"><h3>Revenue Breakdown</h3><canvas id="revChart"></canvas></div>
@@ -53,6 +59,7 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 <script>
 const OPENING_BALANCE = 109379.56;
 const MAINT_Q = 10500;
+const MONTHLY_PROJECTION = 262000; // ₹2.62 lakh
 
 function parseDate(d){
   if(!d) return null;
@@ -71,10 +78,15 @@ Promise.all([
   let paid = {};
   let defaulters = [];
   let dates = [];
+  let monthlyExpense = {};
 
   tx.forEach(t => {
     const dt = parseDate(t.Date);
-    if (dt) dates.push(dt);
+    if (dt) {
+      dates.push(dt);
+      const key = dt.getFullYear() + "-" + (dt.getMonth()+1);
+      monthlyExpense[key] = monthlyExpense[key] || 0;
+    }
 
     const raw = t["Amount (₹)"];
     if (!raw) return;
@@ -101,37 +113,53 @@ Promise.all([
     if (type === "expense") {
       expense += amt;
       expMap[t.Category] = (expMap[t.Category] || 0) + amt;
+      if (dt) {
+        const key = dt.getFullYear() + "-" + (dt.getMonth()+1);
+        monthlyExpense[key] += amt;
+      }
     }
   });
 
+  // Dates
   if (dates.length) {
     const minDate = new Date(Math.min(...dates));
     const maxDate = new Date(Math.max(...dates));
     document.getElementById("fromDate").innerText = minDate.toLocaleDateString("en-IN");
     document.getElementById("toDate").innerText = maxDate.toLocaleDateString("en-IN");
-  } else {
-    document.getElementById("fromDate").innerText = "-";
-    document.getElementById("toDate").innerText = "-";
   }
 
-  document.getElementById("opening").innerText =
-    Math.round(OPENING_BALANCE).toLocaleString("en-IN");
-  document.getElementById("revenue").innerText =
-    Math.round(revenue).toLocaleString("en-IN");
-  document.getElementById("expense").innerText =
-    Math.round(expense).toLocaleString("en-IN");
+  // KPIs
+  document.getElementById("opening").innerText = Math.round(OPENING_BALANCE).toLocaleString("en-IN");
+  document.getElementById("revenue").innerText = Math.round(revenue).toLocaleString("en-IN");
+  document.getElementById("expense").innerText = Math.round(expense).toLocaleString("en-IN");
   document.getElementById("closing").innerText =
     Math.round(OPENING_BALANCE + revenue - expense).toLocaleString("en-IN");
 
+  // Defaulters
   apts.forEach(obj => {
     const aptNo = String(obj.apartment).trim();
-    if ((paid[aptNo] || 0) < MAINT_Q) {
-      defaulters.push(aptNo);
-    }
+    if ((paid[aptNo] || 0) < MAINT_Q) defaulters.push(aptNo);
   });
 
   document.getElementById("defaulters").innerText =
     defaulters.length ? defaulters.join(", ") : "No defaulters";
+  document.getElementById("defaulterCount").innerText = defaulters.length;
+
+  // MOM Chart
+  const months = Object.keys(monthlyExpense).sort();
+  const expenseData = months.map(m => Math.round(monthlyExpense[m]));
+  const projectionData = months.map(() => MONTHLY_PROJECTION);
+
+  new Chart(document.getElementById("momChart"), {
+    type: "bar",
+    data: {
+      labels: months,
+      datasets: [
+        { label: "Actual Expense", data: expenseData },
+        { label: "Projected Expense", data: projectionData }
+      ]
+    }
+  });
 
   new Chart(document.getElementById("revChart"), {
     type: "pie",
