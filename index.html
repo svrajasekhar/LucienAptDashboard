@@ -26,7 +26,8 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 </div>
 
 
-<div style="text-align:right;margin-bottom:6px;">
+<!-- Owner/MC toggle removed -->
+<div style="display:none;">
   <label><input type="radio" name="role" value="owner" checked> Owner</label>
   <label style="margin-left:10px;"><input type="radio" name="role" value="mc"> MC</label>
 </div>
@@ -59,12 +60,12 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 
 </div>
 
-<div class="section mc-only">
+<div class="section">
   <h3>Defaulters – Current Quarter <span class="badge" id="defaulterCount">0</span></h3>
   <div id="defaulters"></div>
 </div>
 
-<div class="section mc-only">
+<div class="section">
   <h3>Quarterly: Expense vs Projection</h3>
   <canvas id="qChart"></canvas>
 </div>
@@ -223,7 +224,7 @@ Promise.all([
   });
 
 // Role-based toggle (Owner vs MC)
-document.querySelectorAll('input[name="role"]').forEach(r => {
+// role toggle removed.forEach(r => {
   r.addEventListener('change', e => {
     const role = e.target.value;
     document.querySelectorAll('.mc-only').forEach(el => {
