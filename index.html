@@ -43,8 +43,8 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 </div>
 
 <div class="section">
-  <h3>Month-on-Month: Expense vs Projection</h3>
-  <canvas id="momChart"></canvas>
+  <h3>Quarterly: Expense vs Projection</h3>
+  <canvas id="qChart"></canvas>
 </div>
 
 <div class="section"><h3>Revenue Breakdown</h3><canvas id="revChart"></canvas></div>
@@ -59,12 +59,18 @@ body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
 <script>
 const OPENING_BALANCE = 109379.56;
 const MAINT_Q = 10500;
-const MONTHLY_PROJECTION = 262000; // ₹2.62 lakh
+const MONTHLY_PROJECTION = 262000; // ₹2.62 lakh per month
+const QUARTERLY_PROJECTION = MONTHLY_PROJECTION * 3;
 
 function parseDate(d){
   if(!d) return null;
   const parsed = new Date(d);
   return isNaN(parsed) ? null : parsed;
+}
+
+function getQuarter(d){
+  const m = d.getMonth(); // 0-11
+  return Math.floor(m / 3) + 1;
 }
 
 Promise.all([
@@ -78,14 +84,12 @@ Promise.all([
   let paid = {};
   let defaulters = [];
   let dates = [];
-  let monthlyExpense = {};
+  let quarterlyExpense = {};
 
   tx.forEach(t => {
     const dt = parseDate(t.Date);
     if (dt) {
       dates.push(dt);
-      const key = dt.getFullYear() + "-" + (dt.getMonth()+1);
-      monthlyExpense[key] = monthlyExpense[key] || 0;
     }
 
     const raw = t["Amount (₹)"];
@@ -114,13 +118,12 @@ Promise.all([
       expense += amt;
       expMap[t.Category] = (expMap[t.Category] || 0) + amt;
       if (dt) {
-        const key = dt.getFullYear() + "-" + (dt.getMonth()+1);
-        monthlyExpense[key] += amt;
+        const qKey = dt.getFullYear() + "-Q" + getQuarter(dt);
+        quarterlyExpense[qKey] = (quarterlyExpense[qKey] || 0) + amt;
       }
     }
   });
 
-  // Dates
   if (dates.length) {
     const minDate = new Date(Math.min(...dates));
     const maxDate = new Date(Math.max(...dates));
@@ -128,14 +131,12 @@ Promise.all([
     document.getElementById("toDate").innerText = maxDate.toLocaleDateString("en-IN");
   }
 
-  // KPIs
   document.getElementById("opening").innerText = Math.round(OPENING_BALANCE).toLocaleString("en-IN");
   document.getElementById("revenue").innerText = Math.round(revenue).toLocaleString("en-IN");
   document.getElementById("expense").innerText = Math.round(expense).toLocaleString("en-IN");
   document.getElementById("closing").innerText =
     Math.round(OPENING_BALANCE + revenue - expense).toLocaleString("en-IN");
 
-  // Defaulters
   apts.forEach(obj => {
     const aptNo = String(obj.apartment).trim();
     if ((paid[aptNo] || 0) < MAINT_Q) defaulters.push(aptNo);
@@ -145,18 +146,18 @@ Promise.all([
     defaulters.length ? defaulters.join(", ") : "No defaulters";
   document.getElementById("defaulterCount").innerText = defaulters.length;
 
-  // MOM Chart
-  const months = Object.keys(monthlyExpense).sort();
-  const expenseData = months.map(m => Math.round(monthlyExpense[m]));
-  const projectionData = months.map(() => MONTHLY_PROJECTION);
+  // Quarterly Chart
+  const qLabels = Object.keys(quarterlyExpense).sort();
+  const qExpense = qLabels.map(q => Math.round(quarterlyExpense[q]));
+  const qProjection = qLabels.map(() => QUARTERLY_PROJECTION);
 
-  new Chart(document.getElementById("momChart"), {
+  new Chart(document.getElementById("qChart"), {
     type: "bar",
     data: {
-      labels: months,
+      labels: qLabels,
       datasets: [
-        { label: "Actual Expense", data: expenseData },
-        { label: "Projected Expense", data: projectionData }
+        { label: "Actual Expense", data: qExpense },
+        { label: "Projected Expense", data: qProjection }
       ]
     }
   });
