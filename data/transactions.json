@@ -5,7 +5,7 @@
     "Category": "Maintenance Charges",
     "Sub-Category": "Maintenance Fee",
     "Description": "",
-    "apartment": 102,
+    "apartment": 101,
     "Amount (₹)": 10500
   },
   {
@@ -18,13 +18,13 @@
     "Amount (₹)": 5000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "3-Jan-26",
+    "Type": "Expense",
+    "Category": "Other Income",
+    "Sub-Category": "Car Parking Charges",
     "Description": "",
-    "apartment": "",
-    "Amount (₹)": ""
+    "apartment": 305,
+    "Amount (₹)": 1800
   },
   {
     "Date": "",
