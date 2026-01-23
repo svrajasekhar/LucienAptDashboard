@@ -4,155 +4,216 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lucien Apartment Dashboard</title>
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 <style>
-body{font-family:Arial,sans-serif;margin:0;background:#f4f6f8}
-.container{padding:12px;max-width:1100px;margin:auto}
-h2{text-align:center}
-
-.kpis{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-  margin-top:12px
-}
-.kpi{background:#fff;padding:12px;border-radius:8px}
-.kpi span{font-size:20px;font-weight:bold}
-.kpi small{display:block;font-size:11px;color:#555;margin-top:4px}
-#fromDate,#toDate,#corpusDate{font-size:12px;font-weight:bold}
-
-.section{background:#fff;margin-top:16px;padding:12px;border-radius:8px}
-.section-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-
-.badge{display:inline-block;padding:2px 8px;border-radius:12px;background:#c0392b;color:#fff;font-size:12px;margin-left:6px}
-
-/* Senior-friendly color palette */
-body {
+/* ===== Base & Accessibility ===== */
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
   background:#eef2f5;
   color:#1a1a1a;
   font-size:16px;
 }
-
-.kpi {
-  background:#e8f0fe;
-  border:1px solid #c6d4f0;
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:16px;
 }
-
-.kpi:nth-child(2n) {
-  background:#e6f4ea;
-  border-color:#b7e1c1;
+h2{
+  text-align:center;
+  color:#0b3c5d;
+  margin-bottom:10px;
 }
-
-.section {
-  background:#fff7e6;
-  border:1px solid #f0d9a6;
-}
-
-.section-row .section:first-child {
-  background:#fdecea;
-  border-color:#f5c6cb;
-}
-
-.section-row .section:last-child {
-  background:#e8f0fe;
-  border-color:#c6d4f0;
-}
-
-h2, h3 {
+h3{
   color:#0b3c5d;
 }
 
-.badge {
-  font-size:14px;
+/* ===== KPI Grid ===== */
+.kpis{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  margin-top:12px;
 }
-
-.kpi span {
-  font-size:22px;
+.kpi{
+  background:#e8f0fe;
+  border:1px solid #c6d4f0;
+  border-radius:10px;
+  padding:14px;
 }
-
-.kpi b {
+.kpi:nth-child(2n){
+  background:#e6f4ea;
+  border-color:#b7e1c1;
+}
+.kpi b{
   font-size:16px;
 }
-
-small {
+.kpi span{
+  font-size:22px;
+  font-weight:bold;
+}
+.kpi small{
+  display:block;
   font-size:12px;
+  margin-top:6px;
+  color:#333;
+}
+#fromDate,#toDate,#corpusDate{
+  font-size:12px;
+  font-weight:bold;
 }
 
+/* ===== Sections ===== */
+.section{
+  background:#fff7e6;
+  border:1px solid #f0d9a6;
+  border-radius:10px;
+  padding:14px;
+  margin-top:20px;
+}
+.section-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.badge{
+  display:inline-block;
+  padding:4px 10px;
+  border-radius:14px;
+  background:#c0392b;
+  color:#fff;
+  font-size:14px;
+  margin-left:8px;
+}
+
+/* ===== Footer ===== */
+.footer{
+  margin-top:20px;
+  font-size:13px;
+  color:#444;
+  text-align:center;
+}
 </style>
 </head>
+
 <body>
 <div class="container">
 
-<div style="text-align:center;margin-bottom:10px;">
-  <img src="assets/lucien_logo.png" style="max-height:80px;">
-</div>
-
-<h2>Lucien Apartment Dashboard</h2>
-
-<div class="kpis">
-  <!-- Row 1 -->
-  <div class="kpi">
-    <b>Opening Balance</b><br>₹<span id="opening"></span>
-    <small>From: <span id="fromDate"></span></small>
-  </div>
-  <div class="kpi">
-    <b>Closing Balance</b><br>₹<span id="closing"></span>
-    <small>As on: <span id="toDate"></span></small>
+  <div style="text-align:center;margin-bottom:12px;">
+    <img src="assets/lucien_logo.png" style="max-height:80px;" alt="Lucien Logo">
   </div>
 
-  <!-- Row 2 -->
-  <div class="kpi"><b>Total Revenue</b><br>₹<span id="revenue"></span></div>
-  <div class="kpi"><b>Total Expense</b><br>₹<span id="expense"></span></div>
+  <h2>Lucien Apartment Dashboard</h2>
 
-  <!-- Row 3 -->
-  <div class="kpi">
-    <b>Corpus Fund Balance</b><br>₹<span id="corpus">38,00,000</span>
-    <small>As on: <span id="corpusDate">31-Dec-2025</span></small>
-  </div>
-  <div></div>
+  <!-- ===== KPI SECTION ===== -->
+  <div class="kpis">
+    <!-- Row 1 -->
+    <div class="kpi">
+      <b>Opening Balance</b><br>
+      ₹<span id="opening"></span>
+      <small>From: <span id="fromDate"></span></small>
+    </div>
 
-  <!-- Row 4 -->
-  <div class="kpi">
-    <b>Maintenance Pending</b><br>₹<span id="pending"></span>
-  </div>
-  <div class="kpi">
-    <b>Car Parking Pending</b><br>₹<span id="parkingPending"></span>
-  </div>
-</div>
+    <div class="kpi">
+      <b>Closing Balance</b><br>
+      ₹<span id="closing"></span>
+      <small>As on: <span id="toDate"></span></small>
+    </div>
 
-<div class="section-row">
+    <!-- Row 2 -->
+    <div class="kpi">
+      <b>Total Revenue</b><br>
+      ₹<span id="revenue"></span>
+    </div>
+
+    <div class="kpi">
+      <b>Total Expense</b><br>
+      ₹<span id="expense"></span>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="kpi">
+      <b>Corpus Fund Balance</b><br>
+      ₹<span>38,00,000</span>
+      <small>As on: <span id="corpusDate">31-Dec-2025</span></small>
+    </div>
+    <div></div>
+
+    <!-- Row 4 -->
+    <div class="kpi">
+      <b>Maintenance Pending</b><br>
+      ₹<span id="maintPending"></span>
+    </div>
+
+    <div class="kpi">
+      <b>Car Parking Pending</b><br>
+      ₹<span id="parkingPending"></span>
+    </div>
+  </div>
+
+  <!-- ===== DEFAULTERS ===== -->
+  <div class="section-row">
+    <div class="section">
+      <h3>Maintenance Defaulters <span class="badge" id="maintCount"></span></h3>
+      <div id="maintDefaulters"></div>
+    </div>
+    <div class="section">
+      <h3>Car Parking Defaulters <span class="badge" id="parkCount"></span></h3>
+      <div id="parkDefaulters"></div>
+    </div>
+  </div>
+
+  <!-- ===== CHARTS ===== -->
   <div class="section">
-    <h3>Maintenance Defaulters <span class="badge" id="maintCount"></span></h3>
-    <div id="maintDefaulters"></div>
+    <h3>Quarterly Expense vs Projection</h3>
+    <canvas id="qChart"></canvas>
   </div>
+
   <div class="section">
-    <h3>Car Parking Defaulters <span class="badge" id="parkCount"></span></h3>
-    <div id="parkDefaulters"></div>
+    <h3>Revenue Breakdown</h3>
+    <canvas id="revChart"></canvas>
   </div>
-</div>
 
-<div class="section"><h3>Quarterly Expense vs Projection</h3><canvas id="qChart"></canvas></div>
-<div class="section"><h3>Revenue Breakdown</h3><canvas id="revChart"></canvas></div>
-<div class="section"><h3>Expense Breakdown</h3><canvas id="expChart"></canvas></div>
-<div class="section"><h3>News & Issues</h3><div id="news"></div></div>
+  <div class="section">
+    <h3>Expense Breakdown</h3>
+    <canvas id="expChart"></canvas>
+  </div>
 
-<div style="margin-top:16px;font-size:12px;color:#666;text-align:center;">
-  Data as on <span id="dataAsOn"></span>
-</div>
+  <!-- ===== NEWS ===== -->
+  <div class="section">
+    <h3>News & Issues</h3>
+    <div id="news"></div>
+  </div>
+
+  <div class="footer">
+    Data as on <span id="dataAsOn"></span>
+  </div>
 
 </div>
 
 <script>
+/* ===== Constants ===== */
 const OPENING_BALANCE = 109379.56;
 const MAINT_Q = 10500;
-const PARKING_RATE = 900; // Quarterly per slot
+const PARKING_RATE = 900;
 const MONTHLY_PROJECTION = 262000;
 const QUARTERLY_PROJECTION = MONTHLY_PROJECTION * 3;
 
-function parseDate(d){const x=new Date(d);return isNaN(x)?null:x;}
-function fmt(d){return d.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}).replace(/ /g,"-");}
-function qtr(m){return Math.floor(m/3)+1;}
+/* ===== Helpers ===== */
+function parseDate(d){
+  const x = new Date(d);
+  return isNaN(x) ? null : x;
+}
+function fmt(d){
+  return d.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}).replace(/ /g,"-");
+}
+function quarterLabel(m){
+  return ["Jan to March","Apr to June","Jul to Sept","Oct to Dec"][Math.floor(m/3)];
+}
 
+/* ===== Load Data ===== */
 Promise.all([
   fetch("data/transactions.json").then(r=>r.json()),
   fetch("data/apartments.json").then(r=>r.json()),
@@ -160,81 +221,108 @@ Promise.all([
   fetch("data/news.json").then(r=>r.json())
 ]).then(([tx,apts,parking,news])=>{
 
-let revenue=0,expense=0,dates=[];
-let paidMaint={},paidPark={},revMap={},expMap={},qExp={};
+  let revenue=0, expense=0;
+  let paidMaint={}, paidPark={}, revMap={}, expMap={}, qExp={}, dates=[];
 
-tx.forEach(t=>{
-  const dt=parseDate(t.Date); if(dt) dates.push(dt);
-  const amt=Number(String(t["Amount (₹)"]||"").replace(/₹|,/g,""));
-  if(!amt) return;
-  const type=(t.Type||"").toLowerCase();
-  const sub=(t["Sub-Category"]||"").toLowerCase();
-  const apt=t.apartment??t["Apt No"];
+  tx.forEach(t=>{
+    const dt = parseDate(t.Date);
+    if(dt) dates.push(dt);
 
-  if(type==="revenue"){
-    revenue+=amt;
-    revMap[t.Category]=(revMap[t.Category]||0)+amt;
-    if(sub==="maintenance fee" && apt) paidMaint[apt]=(paidMaint[apt]||0)+amt;
-    if(sub==="car parking charges" && apt) paidPark[apt]=(paidPark[apt]||0)+amt;
-  }
+    const amt = Number(String(t["Amount (₹)"]||"").replace(/₹|,/g,""));
+    if(!amt) return;
 
-  if(type==="expense"){
-    expense+=amt;
-    expMap[t.Category]=(expMap[t.Category]||0)+amt;
-    if(dt){
-      const label=["Jan to March","Apr to June","Jul to Sept","Oct to Dec"][qtr(dt.getMonth())-1];
-      qExp[label]=(qExp[label]||0)+amt;
+    const type = (t.Type||"").toLowerCase();
+    const sub  = (t["Sub-Category"]||"").toLowerCase();
+    const apt  = t.apartment ?? t["Apt No"];
+
+    if(type==="revenue"){
+      revenue += amt;
+      revMap[t.Category] = (revMap[t.Category]||0) + amt;
+      if(sub==="maintenance fee" && apt) paidMaint[apt]=(paidMaint[apt]||0)+amt;
+      if(sub==="car parking charges" && apt) paidPark[apt]=(paidPark[apt]||0)+amt;
     }
+
+    if(type==="expense"){
+      expense += amt;
+      expMap[t.Category] = (expMap[t.Category]||0) + amt;
+      if(dt){
+        const q = quarterLabel(dt.getMonth());
+        qExp[q] = (qExp[q]||0) + amt;
+      }
+    }
+  });
+
+  /* ===== KPI Values ===== */
+  opening.innerText = Math.round(OPENING_BALANCE).toLocaleString("en-IN");
+  revenue.innerText = Math.round(revenue).toLocaleString("en-IN");
+  expense.innerText = Math.round(expense).toLocaleString("en-IN");
+  closing.innerText = Math.round(OPENING_BALANCE + revenue - expense).toLocaleString("en-IN");
+
+  if(dates.length){
+    const min = new Date(Math.min(...dates));
+    const max = new Date(Math.max(...dates));
+    fromDate.innerText = fmt(min);
+    toDate.innerText   = fmt(max);
+    dataAsOn.innerText= fmt(max);
   }
-});
 
-opening.innerText=Math.round(OPENING_BALANCE).toLocaleString("en-IN");
-revenue.innerText=Math.round(revenue).toLocaleString("en-IN");
-expense.innerText=Math.round(expense).toLocaleString("en-IN");
-closing.innerText=Math.round(OPENING_BALANCE+revenue-expense).toLocaleString("en-IN");
+  /* ===== Maintenance ===== */
+  let maintDef=[], maintCollected=0;
+  apts.forEach(a=>{
+    const k=a.apartment;
+    maintCollected += paidMaint[k]||0;
+    if((paidMaint[k]||0) < MAINT_Q) maintDef.push(k);
+  });
+  maintDefaulters.innerText = maintDef.join(", ") || "None";
+  maintCount.innerText = maintDef.length;
+  maintPending.innerText =
+    Math.max(apts.length*MAINT_Q - maintCollected,0).toLocaleString("en-IN");
 
-if(dates.length){
-  const min=new Date(Math.min(...dates)), max=new Date(Math.max(...dates));
-  fromDate.innerText=fmt(min); toDate.innerText=fmt(max); dataAsOn.innerText=fmt(max);
-}
+  /* ===== Parking ===== */
+  let parkDef=[], parkCollected=0, parkExpected=0;
+  parking.forEach(p=>{
+    const exp = p.slots * PARKING_RATE;
+    parkExpected += exp;
+    const paid = paidPark[p.apartment]||0;
+    parkCollected += paid;
+    if(paid < exp) parkDef.push(p.apartment);
+  });
+  parkDefaulters.innerText = parkDef.join(", ") || "None";
+  parkCount.innerText = parkDef.length;
+  parkingPending.innerText =
+    Math.max(parkExpected - parkCollected,0).toLocaleString("en-IN");
 
-let maintDef=[],maintCollected=0;
-apts.forEach(a=>{
-  const k=a.apartment;
-  maintCollected+=paidMaint[k]||0;
-  if((paidMaint[k]||0)<MAINT_Q) maintDef.push(k);
-});
-maintDefaulters.innerText=maintDef.join(", ")||"None";
-maintCount.innerText=maintDef.length;
+  /* ===== Charts ===== */
+  new Chart(qChart,{
+    type:"bar",
+    data:{
+      labels:Object.keys(qExp),
+      datasets:[
+        {label:"Actual Expense",data:Object.values(qExp)},
+        {label:"Projected Expense",data:Object.keys(qExp).map(()=>QUARTERLY_PROJECTION)}
+      ]
+    }
+  });
 
-let parkDef=[],parkCollected=0,parkExpected=0;
-parking.forEach(p=>{
-  const exp=p.slots*PARKING_RATE;
-  parkExpected+=exp;
-  const paid=paidPark[p.apartment]||0;
-  parkCollected+=paid;
-  if(paid<exp) parkDef.push(p.apartment);
-});
-parkDefaulters.innerText=parkDef.join(", ")||"None";
-parkCount.innerText=parkDef.length;
+  new Chart(revChart,{
+    type:"pie",
+    data:{labels:Object.keys(revMap),datasets:[{data:Object.values(revMap)}]}
+  });
 
-pending.innerText=Math.max(apts.length*MAINT_Q-maintCollected,0).toLocaleString("en-IN");
-parkingPending.innerText=Math.max(parkExpected-parkCollected,0).toLocaleString("en-IN");
+  new Chart(expChart,{
+    type:"pie",
+    data:{labels:Object.keys(expMap),datasets:[{data:Object.values(expMap)}]}
+  });
 
-new Chart(qChart,{type:"bar",data:{labels:Object.keys(qExp),datasets:[
-  {label:"Actual Expense",data:Object.values(qExp)},
-  {label:"Projected Expense",data:Object.keys(qExp).map(()=>QUARTERLY_PROJECTION)}
-]}});
-
-new Chart(revChart,{type:"pie",data:{labels:Object.keys(revMap),datasets:[{data:Object.values(revMap)}]}});
-new Chart(expChart,{type:"pie",data:{labels:Object.keys(expMap),datasets:[{data:Object.values(expMap)}]}});
-
-news.forEach(n=>{
-  const d=document.createElement("div");
-  d.innerHTML="<b>"+n.Title+"</b><br><small>"+n.Date+"</small><div>"+(n.Description||"")+"</div>";
-  document.getElementById("news").appendChild(d);
-});
+  /* ===== News ===== */
+  news.forEach(n=>{
+    const d=document.createElement("div");
+    d.innerHTML="<b>"+n.Title+"</b><br><small>"+n.Date+"</small><div>"+(n.Description||"")+"</div>";
+    newsContainer = document.getElementById("news");
+    newsContainer.appendChild(d);
+  });
 });
 </script>
+
 </body>
 </html>
