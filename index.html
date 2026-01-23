@@ -125,12 +125,12 @@ h3{
     <!-- Row 2 -->
     <div class="kpi">
       <b>Total Revenue</b><br>
-      ₹<span id="revenue"></span>
+      ₹<span id="revenue">0</span>
     </div>
 
     <div class="kpi">
       <b>Total Expense</b><br>
-      ₹<span id="expense"></span>
+      ₹<span id="expense">0</span>
     </div>
 
     <!-- Row 3 -->
@@ -291,6 +291,14 @@ Promise.all([
   parkCount.innerText = parkDef.length;
   parkingPending.innerText =
     Math.max(parkExpected - parkCollected,0).toLocaleString("en-IN");
+
+
+  // --- Defensive binding for Revenue & Expense ---
+  const revEl = document.getElementById("revenue");
+  const expEl = document.getElementById("expense");
+  if (revEl) revEl.innerText = Math.round(revenue).toLocaleString("en-IN");
+  if (expEl) expEl.innerText = Math.round(expense).toLocaleString("en-IN");
+
 
   /* ===== Charts ===== */
   new Chart(qChart,{
