@@ -1,14 +1,14 @@
 [
   {
-    "Date": "1/1/26",
+    "Date": "1/25/26",
     "Title": "Wall Crack Issue",
-    "Description": "Checking Builders regarding wall crack",
-    "Status": "Pending"
+    "Description": "Sent detailed email to Daksha management on various issues",
+    "Status": "Awaiting response"
   },
   {
-    "Date": "1/2/26",
-    "Title": "Defaulters",
-    "Description": "Checking with Defaulters for Maintenance fee collection",
-    "Status": "Pending"
+    "Date": "1/21/26",
+    "Title": "Maintenance Defaulters",
+    "Description": "Checked with Defaulters for Maintenance fee",
+    "Status": "Pending with Defaulters"
   }
 ]
