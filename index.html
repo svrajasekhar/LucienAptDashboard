@@ -235,14 +235,17 @@ Promise.all([
     const sub  = (t["Sub-Category"]||"").toLowerCase();
     const apt  = t.apartment ?? t["Apt No"];
 
-    if(type==="revenue"){
+    const category = (t.Category || "").toLowerCase();
+    const isContra = category.includes("contra");
+
+    if(type==="revenue" && !isContra){
       revenue += amt;
       revMap[t.Category] = (revMap[t.Category]||0) + amt;
       if(sub==="maintenance fee" && apt) paidMaint[apt]=(paidMaint[apt]||0)+amt;
       if(sub==="car parking charges" && apt) paidPark[apt]=(paidPark[apt]||0)+amt;
     }
 
-    if(type==="expense"){
+    if(type==="expense" && !isContra){
       expense += amt;
       expMap[t.Category] = (expMap[t.Category]||0) + amt;
       if(dt){
