@@ -7,69 +7,136 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
-body{margin:0;font-family:Arial;background:#eef2f5}
-.container{max-width:900px;margin:auto;padding:16px}
-.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.kpi{background:#e8f0fe;padding:12px;border-radius:8px}
-.kpi span{font-size:20px;font-weight:bold}
+body{margin:0;font-family:Arial,sans-serif;background:#eef2f5;color:#1a1a1a}
+.container{max-width:1100px;margin:auto;padding:16px}
+h2{text-align:center;color:#0b3c5d}
+
+.kpis{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:12px}
+.kpi{background:#e8f0fe;border:1px solid #c6d4f0;border-radius:10px;padding:14px}
+.kpi:nth-child(2n){background:#e6f4ea}
+.kpi span{font-size:22px;font-weight:bold}
+.kpi small{display:block;font-size:12px;margin-top:6px}
+
+.section{background:#fff7e6;border:1px solid #f0d9a6;border-radius:10px;padding:14px;margin-top:20px}
+.footer{text-align:center;margin-top:16px;font-size:12px}
 </style>
 </head>
 
 <body>
 <div class="container">
 
+<!-- LOGO -->
+<div style="text-align:center;margin-bottom:10px;">
+<img src="assets/lucien_logo.png" style="max-height:80px;" alt="Lucien Logo">
+</div>
+
 <h2>Lucien Apartment Dashboard</h2>
 
 <div class="kpis">
-<div class="kpi">Opening Balance<br>₹<span id="opening"></span></div>
-<div class="kpi">Closing Balance<br>₹<span id="closing"></span></div>
-<div class="kpi">Total Revenue<br>₹<span id="revenue"></span></div>
-<div class="kpi">Total Expense<br>₹<span id="expense"></span></div>
-<div class="kpi">Corpus Fund Balance<br>₹<span>37,84,947</span></div>
+<div class="kpi">
+<b>Opening Balance</b><br>
+₹<span id="opening"></span>
+<small>From: <span id="fromDate"></span></small>
 </div>
 
+<div class="kpi">
+<b>Closing Balance</b><br>
+₹<span id="closing"></span>
+<small>As on: <span id="toDate"></span></small>
+</div>
+
+<div class="kpi">
+<b>Total Revenue</b><br>
+₹<span id="revenue"></span>
+</div>
+
+<div class="kpi">
+<b>Total Expense</b><br>
+₹<span id="expense"></span>
+</div>
+
+<div class="kpi">
+<b>Corpus Fund Balance</b><br>
+₹<span>37,84,947</span>
+<small>As on: <span id="corpusDate">31-Dec-2025</span></small>
+</div>
+</div>
+
+<div class="section">
+<h3>Revenue Breakdown</h3>
 <canvas id="revChart"></canvas>
+</div>
+
+<div class="section">
+<h3>Expense Breakdown</h3>
 <canvas id="expChart"></canvas>
+</div>
+
+<div class="footer">
+Data as on <span id="dataAsOn"></span>
+</div>
 
 </div>
 
 <script>
 const OPENING_BALANCE = 109379.56;
 
+function parseDate(d){
+const x=new Date(d);
+return isNaN(x)?null:x;
+}
+
+function fmt(d){
+return d.toLocaleDateString("en-GB",{day:"2-digit",month:"short",year:"numeric"}).replace(/ /g,"-");
+}
+
 Promise.all([
 fetch("data/transactions.json").then(r=>r.json())
 ]).then(([tx])=>{
 
-let revenue=0, expense=0;
+let revenue=0, expense=0, dates=[];
 let revMap={}, expMap={};
 
 tx.forEach(t=>{
-  const amt = Number(String(t["Amount (₹)"]||"").replace(/₹|,/g,""));
-  if(!amt) return;
+const dt=parseDate(t.Date);
+if(dt) dates.push(dt);
 
-  const type = (t.Type||"").toLowerCase();
-  const cat = (t.Category||"").toLowerCase();
+const amt=Number(String(t["Amount (₹)"]||"").replace(/₹|,/g,""));
+if(!amt) return;
 
-  if(cat.includes("contra")) return;
+const type=(t.Type||"").toLowerCase();
+const cat=(t.Category||"").toLowerCase();
 
-  if(type==="revenue"){
-    revenue += amt;
-    revMap[t.Category]=(revMap[t.Category]||0)+amt;
-  }
+if(cat.includes("contra")) return;
 
-  if(type==="expense"){
-    expense += amt;
-    expMap[t.Category]=(expMap[t.Category]||0)+amt;
-  }
+if(type==="revenue"){
+revenue+=amt;
+revMap[t.Category]=(revMap[t.Category]||0)+amt;
+}
+
+if(type==="expense"){
+expense+=amt;
+expMap[t.Category]=(expMap[t.Category]||0)+amt;
+}
 });
 
-// CRITICAL FIX: assign AFTER calculation
-document.getElementById("revenue").innerText = Math.round(revenue).toLocaleString("en-IN");
-document.getElementById("expense").innerText = Math.round(expense).toLocaleString("en-IN");
+/* KPI Binding */
+document.getElementById("opening").innerText=Math.round(OPENING_BALANCE).toLocaleString("en-IN");
+document.getElementById("revenue").innerText=Math.round(revenue).toLocaleString("en-IN");
+document.getElementById("expense").innerText=Math.round(expense).toLocaleString("en-IN");
+document.getElementById("closing").innerText=Math.round(OPENING_BALANCE+revenue-expense).toLocaleString("en-IN");
 
-document.getElementById("opening").innerText = Math.round(OPENING_BALANCE).toLocaleString("en-IN");
-document.getElementById("closing").innerText = Math.round(OPENING_BALANCE + revenue - expense).toLocaleString("en-IN");
+/* Dates */
+if(dates.length){
+const min=new Date(Math.min(...dates));
+const max=new Date(Math.max(...dates));
 
+document.getElementById("fromDate").innerText=fmt(min);
+document.getElementById("toDate").innerText=fmt(max);
+document.getElementById("dataAsOn").innerText=fmt(max);
+}
+
+/* Charts */
 new Chart(document.getElementById("revChart"),{
 type:"pie",
 data:{labels:Object.keys(revMap),datasets:[{data:Object.values(revMap)}]}
