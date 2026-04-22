@@ -108,15 +108,6 @@
     "Amount (₹)": 10500
   },
   {
-    "Date": "8-Jan-26",
-    "Type": "Revenue",
-    "Category": "Other Income",
-    "Sub-Category": "Car Parking Charges",
-    "Description": "",
-    "Apt No": 305,
-    "Amount (₹)": 1800
-  },
-  {
     "Date": "2-Jan-26",
     "Type": "Revenue",
     "Category": "Maintenance Charges",
@@ -216,6 +207,15 @@
     "Amount (₹)": 10500
   },
   {
+    "Date": "3-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Maintenance Fee",
+    "Description": "",
+    "Apt No": 312,
+    "Amount (₹)": 10500
+  },
+  {
     "Date": "4-Jan-26",
     "Type": "Revenue",
     "Category": "Maintenance Charges",
@@ -297,6 +297,51 @@
     "Amount (₹)": 10500
   },
   {
+    "Date": "5-Jan-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "Description": "Subash Dec'25 salary",
+    "Apt No": "",
+    "Amount (₹)": 13000
+  },
+  {
+    "Date": "5-Jan-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "Description": "Sajan dec'25 salary",
+    "Apt No": "",
+    "Amount (₹)": 12000
+  },
+  {
+    "Date": "5-Jan-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "Description": "Puskar Dec'25 salary",
+    "Apt No": "",
+    "Amount (₹)": 12000
+  },
+  {
+    "Date": "5-Jan-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Staff Salary",
+    "Description": "valarmathi Dec'25 salary",
+    "Apt No": "",
+    "Amount (₹)": 5000
+  },
+  {
+    "Date": "5-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "Description": "milk expenses for jan'26 month",
+    "Apt No": "",
+    "Amount (₹)": 1350
+  },
+  {
     "Date": "6-Jan-26",
     "Type": "Revenue",
     "Category": "Maintenance Charges",
@@ -337,7 +382,7 @@
     "Type": "Expense",
     "Category": "Repairs & Maintenance",
     "Sub-Category": "STP & RO Repair Work",
-    "Description": "",
+    "Description": "Senthilkumar Associates",
     "Apt No": "",
     "Amount (₹)": 18202
   },
@@ -385,6 +430,24 @@
     "Description": "",
     "Apt No": "",
     "Amount (₹)": 31000
+  },
+  {
+    "Date": "7-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "Description": "water can purchase",
+    "Apt No": "",
+    "Amount (₹)": 680
+  },
+  {
+    "Date": "8-Jan-26",
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Car Parking Charges",
+    "Description": "",
+    "Apt No": 305,
+    "Amount (₹)": 1800
   },
   {
     "Date": "8-Jan-26",
@@ -445,7 +508,7 @@
     "Type": "Expense",
     "Category": "Cash Withdrawal (Contra)",
     "Sub-Category": "Cash Withdrawn for Salary Distribution",
-    "Description": "",
+    "Description": "Chq No: 317",
     "Apt No": "",
     "Amount (₹)": 40000
   },
@@ -463,7 +526,7 @@
     "Type": "Expense",
     "Category": "Cash Withdrawal (Contra)",
     "Sub-Category": "Cash Withdrawn for Salary Distribution",
-    "Description": "",
+    "Description": "Chq No: 319",
     "Apt No": "",
     "Amount (₹)": 40000
   },
@@ -493,6 +556,24 @@
     "Description": "NO Dumping",
     "Apt No": "",
     "Amount (₹)": 5200
+  },
+  {
+    "Date": "8-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "Description": "corporation water man charges",
+    "Apt No": "",
+    "Amount (₹)": 1000
+  },
+  {
+    "Date": "8-Jan-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "STP Repair work (gravel cleaning) . I Advance",
+    "Apt No": "",
+    "Amount (₹)": 25000
   },
   {
     "Date": "9-Jan-26",
@@ -630,6 +711,42 @@
     "Amount (₹)": 1.18
   },
   {
+    "Date": "11-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Office Expenses",
+    "Description": "AGM MEETING - Subash",
+    "Apt No": "",
+    "Amount (₹)": 600
+  },
+  {
+    "Date": "11-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Office Expenses",
+    "Description": "AGM MEETING - Valarmathi",
+    "Apt No": "",
+    "Amount (₹)": 200
+  },
+  {
+    "Date": "11-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Office Expenses",
+    "Description": "agm meeting - chair & table rent",
+    "Apt No": "",
+    "Amount (₹)": 3400
+  },
+  {
+    "Date": "11-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Office Expenses",
+    "Description": "water can purchase",
+    "Apt No": "",
+    "Amount (₹)": 100
+  },
+  {
     "Date": "12-Jan-26",
     "Type": "Expense",
     "Category": "Repairs & Maintenance",
@@ -639,6 +756,15 @@
     "Amount (₹)": 31350
   },
   {
+    "Date": "12-Jan-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Electrical Repairs",
+    "Description": "EB Transfomer fuse",
+    "Apt No": "",
+    "Amount (₹)": 500
+  },
+  {
     "Date": "13-Jan-26",
     "Type": "Revenue",
     "Category": "Maintenance Charges",
@@ -646,6 +772,33 @@
     "Description": "",
     "Apt No": 201,
     "Amount (₹)": 10500
+  },
+  {
+    "Date": "13-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Office Expenses",
+    "Description": "AGM Meeting- Tea & snacks",
+    "Apt No": "",
+    "Amount (₹)": 1350
+  },
+  {
+    "Date": "14-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Housekeeping Materials",
+    "Description": "mask purchase",
+    "Apt No": "",
+    "Amount (₹)": 1310
+  },
+  {
+    "Date": "14-Jan-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Festival Expenses",
+    "Description": "pongal",
+    "Apt No": "",
+    "Amount (₹)": 350
   },
   {
     "Date": "15-Jan-26",
@@ -729,1426 +882,1273 @@
     "Amount (₹)": 10500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
-  },
-  {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "20-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 10500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "21-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 10500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "25-Jan-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1045
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "26-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 10500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "26-Jan-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Miscellaneous",
+    "Description": "float purchase",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1800
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
-    "Apt No": "",
-    "Amount (₹)": ""
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Maintenance Fee",
+    "Description": "Maintenance with Arrears",
+    "Apt No": 403,
+    "Amount (₹)": 48500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Miscellaneous",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 21125
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Jan-26",
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Car Parking Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Jan-26",
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Car Parking Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 900
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Jan-26",
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Car Parking Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 900
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "30-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "31-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "31-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "31-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "31-Jan-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "1-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "1-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "1-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "2-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 10500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "2-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "2-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "2-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "3-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 10500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "3-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "4-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "4-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "5-Feb-26",
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Bank Interest",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 2815
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "5-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "RO Membrane Changes",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 174994
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "5-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "5-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "5-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "5-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "5-Feb-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "Description": "subash Jan'26 salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 13482
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "5-Feb-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "Description": "sajan Jan'26 salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 13000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "5-Feb-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "Description": "Puskar Jan'26salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 12518
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "5-Feb-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Staff Salary",
+    "Description": "valarmathi Jan'26 salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 5000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "5-Feb-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "Description": "corporation water man charges",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "5-Feb-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Housekeeping Materials",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1553
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "5-Feb-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "Description": "water can purchase",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 240
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "5-Feb-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "Description": "milk expenses for Feb'26 month",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1200
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "6-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "6-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "7-Feb-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Security Salary",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 31000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "8-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "9-Feb-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Staff Salary",
+    "Description": "Sekar Salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 9400
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "9-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "RO chemicals",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 8762
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "9-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "9-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "10-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "10-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "10-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "10-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "Ro work- electrition salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "11-Feb-26",
+    "Type": "Expense",
+    "Category": "Utilities",
+    "Sub-Category": "Electricity Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 124740
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "11-Feb-26",
+    "Type": "Expense",
+    "Category": "Utilities",
+    "Sub-Category": "Electricity Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 53416
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "11-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "11-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "11-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "12-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "13-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "RO Membrane Changes",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 151000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "16-Feb-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "21-Feb-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Bank Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 2.83
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "21-Feb-26",
+    "Type": "Expense",
+    "Category": "Cash Withdrawal (Contra)",
+    "Sub-Category": "Cash Withdrawn for Salary Distribution",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 5000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "21-Feb-26",
+    "Type": "Revenue",
+    "Category": "Cash Introduction (Contra)",
+    "Sub-Category": "Cash Received from Bank for Salary",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 5000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "21-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Common Area Maintenance",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 13300
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "21-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "ND Logistics",
+    "Description": "NO Dumping",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 5200
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "21-Feb-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Bank Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 2.65
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "21-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "ro filter",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 900
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "21-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "float purchase",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1800
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "21-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "stp Repair work",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 700
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "21-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Electrical Repairs",
+    "Description": "EB Transfomer fuse",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "26-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Utilities Purchase",
+    "Description": "Lift Battery",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 4440
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "27-Feb-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 9000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "2-Mar-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Spl Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 6500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Cash Withdrawal (Contra)",
+    "Sub-Category": "Cash Withdrawn for Salary Distribution",
+    "Description": "Chq No: 232",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 75000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "4-Mar-26",
+    "Type": "Revenue",
+    "Category": "Cash Introduction (Contra)",
+    "Sub-Category": "Cash Received from Bank for Salary",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 75000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Staff Salary",
+    "Description": "Sekar Salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 9400
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Staff Salary",
+    "Description": "valarmathi Feb'26 salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 5000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Staff Salary",
+    "Description": "valarmathi advance amount",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 10000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Housekeeping Materials",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1800
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "Description": "water can purchase",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 480
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "Description": "subash Feb'26 salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 10000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "Description": "sajan Feb'26 salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 13000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Housekeeping Salary",
+    "Description": "puskar Feb'26 salary",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 13000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "4-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "Description": "corporation water man charges",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "5-Mar-26",
+    "Type": "Revenue",
+    "Category": "Maintenance Charges",
+    "Sub-Category": "Maintenance Fee",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 2500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "6-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Bank Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 206.5
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "7-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Electrical Repairs",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 4975
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "7-Mar-26",
+    "Type": "Expense",
+    "Category": "Salary & Wages",
+    "Sub-Category": "Security Salary",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 31000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "7-Mar-26",
+    "Type": "Expense",
+    "Category": "Utilities",
+    "Sub-Category": "Water Tax",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 18000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "12-Mar-26",
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Shifting Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "12-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Staff Welfare Expenses",
+    "Description": "milk expenses Mar'26",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "12-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "Ro motor belt purchase",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1156
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "12-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Office Expenses",
+    "Description": "mobile recharges 1 year,& toruch light purchase",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 3100
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "12-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Electrical Repairs",
+    "Description": "EB Transfomer fuse",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "12-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Miscellaneous",
+    "Description": "over head tank -work",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 500
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "16-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "RO chemical",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 8762
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "18-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Common Area Maintenance",
+    "Description": "skoram services",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 13990
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "18-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Utilities Purchase",
+    "Description": "diesel purchase",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 4644
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "20-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Bank Charges",
+    "Description": "PORT Customer payment",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 2.65
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "20-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "ND Logistics",
+    "Description": "ND Logistics",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 5200
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "21-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Office Expenses",
+    "Description": "security note book purchase",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1320
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "21-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Housekeeping Materials",
+    "Description": "Garbage truck wheel",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 900
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "21-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Housekeeping Materials",
+    "Description": "Spanner Set",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 736
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
+    "Date": "23-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
     "Sub-Category": "",
-    "Description": "",
+    "Description": "CTS",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 2022
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "24-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "STP & RO Repair Work",
+    "Description": "STP Chemical",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 9000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "25-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Bank Charges",
+    "Description": "sms charges",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 3.07
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "25-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Bank Charges",
+    "Description": "pord customer payment",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 2.65
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "25-Mar-26",
+    "Type": "Expense",
+    "Category": "Administrative Expenses",
+    "Sub-Category": "Office Expenses",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 3700
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
-    "Description": "",
+    "Date": "26-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Miscellaneous",
+    "Description": "AMC Charges",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 10000
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "28-Mar-26",
+    "Type": "Expense",
+    "Category": "Repairs & Maintenance",
+    "Sub-Category": "Miscellaneous",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 605
   },
   {
-    "Date": "",
-    "Type": "",
-    "Category": "",
-    "Sub-Category": "",
+    "Date": "29-Mar-26",
+    "Type": "Revenue",
+    "Category": "Other Income",
+    "Sub-Category": "Shifting Charges",
     "Description": "",
     "Apt No": "",
-    "Amount (₹)": ""
+    "Amount (₹)": 1000
   },
   {
     "Date": "",
