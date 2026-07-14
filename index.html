@@ -101,7 +101,9 @@ tx.forEach(t=>{
 const dt=parseDate(t.Date);
 if(dt) dates.push(dt);
 
-const amt=Number(String(t["Amount (₹)"]||"").replace(/₹|,/g,""));
+const credit = Number(String(t.Credit || 0).replace(/₹|,/g,""));
+const debit  = Number(String(t.Debit || 0).replace(/₹|,/g,""));
+const balance = Number(String(t["Running Balance"] || 0).replace(/₹|,/g,""));
 if(!amt) return;
 
 const type=(t.Type||"").toLowerCase();
@@ -110,13 +112,17 @@ const cat=(t.Category||"").toLowerCase();
 if(cat.includes("contra")) return;
 
 if(type==="revenue"){
-revenue+=amt;
-revMap[t.Category]=(revMap[t.Category]||0)+amt;
+revenue += credit;
+
+revMap[t.Category] =
+    (revMap[t.Category] || 0) + credit;
 }
 
 if(type==="expense"){
-expense+=amt;
-expMap[t.Category]=(expMap[t.Category]||0)+amt;
+expense += debit;
+
+expMap[t.Category] =
+    (expMap[t.Category] || 0) + debit;
 }
 });
 
